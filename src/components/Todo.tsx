@@ -20,6 +20,7 @@ const Todo: React.FC<TodoProp> = ({ getTodo }) => {
 
 	const handleSubmit = (e: React.FormEvent): void => {
 		e.preventDefault();
+
 		getTodo(todo);
 		setTodo({ text: '', id: '', isCompleted: false, nodeRef: createRef() });
 	};
@@ -42,6 +43,7 @@ const Todo: React.FC<TodoProp> = ({ getTodo }) => {
 				name="text"
 				value={todo.text}
 				autoFocus
+				required
 			/>
 			<button type="submit">+</button>
 		</form>
